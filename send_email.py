@@ -65,7 +65,7 @@ def send_chart(image_path: str) -> None:
     #     smtp.send_message(msg)
     with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as smtp:
         smtp.starttls()  # << THIS IS THE FIX
-        smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+        smtp.login(email_address, email_password)
         smtp.send_message(msg)
 
 
