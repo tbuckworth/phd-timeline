@@ -31,8 +31,7 @@ from pathlib import Path
 
 # Adjust these settings if you are not using Gmail
 SMTP_SERVER = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
-SMTP_PORT = int(os.environ.get('SMTP_PORT', '465'))  # SSL port for Gmail
-
+SMTP_PORT = int(os.environ.get('SMTP_PORT') or '465')  # SSL port for Gmail
 
 def send_chart(image_path: str) -> None:
     """Compose and send an email with ``image_path`` attached.
